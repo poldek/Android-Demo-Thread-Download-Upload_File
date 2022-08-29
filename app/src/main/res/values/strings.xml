@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PhotoCarShop</string>
+    <string name="btnSend">Send</string>
+    <string name="btnGetImage">Get Image</string>
+</resources>

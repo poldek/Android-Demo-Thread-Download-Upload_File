@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="txtStatus" type="com.pgmsoft.photocarshop.model_binding.StatusModel" />
+        <variable name="btnStatus" type="com.pgmsoft.photocarshop.MainActivity" />
+        <variable name="btnGetImage" type="com.pgmsoft.photocarshop.MainActivity" />
+        <variable name="btnImageDirectory" type="com.pgmsoft.photocarshop.MainActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{txtStatus.status}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.474"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> btnStatus.btnClickModel()}"
+            android:text="@string/btnSend"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.467"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtStatus"
+            app:layout_constraintVertical_bias="0.024" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="206dp"
+            android:layout_height="78dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.443"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintVertical_bias="0.158"
+            tools:src="@drawable/ic_baseline_baby_changing_station_24" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> btnGetImage.btnGetImage()}"
+            android:text="@string/btnGetImage"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.094"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewList"
+            android:scrollbars="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.157"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
